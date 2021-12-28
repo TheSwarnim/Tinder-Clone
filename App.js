@@ -1,13 +1,17 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import tw from "twrnc";
+import {AuthProvider} from "./hooks/useAuth";
+import StackNavigator from "./StackNavigator";
 
 export default function App() {
   return (
-    <View style={tw`flex-1 justify-center items-center`}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AuthProvider>
+        <StackNavigator />
+      </AuthProvider>
+    </NavigationContainer>
   );
 }
 
