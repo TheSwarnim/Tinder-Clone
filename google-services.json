@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "328481382959",
+    "firebase_url": "https://forum-8f2e6.firebaseio.com",
+    "project_id": "forum-8f2e6",
+    "storage_bucket": "forum-8f2e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328481382959:android:5f6d74663c98625c439cda",
+        "android_client_info": {
+          "package_name": "host.exp.exponent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328481382959-5ig02c7tvjrvepd79q23dkisbvoh551c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "host.exp.exponent",
+            "certificate_hash": "0a342c9a50e35e699e8e18c7a53d53ce4a6f0c6c"
+          }
+        },
+        {
+          "client_id": "328481382959-uirc597os56d3cj6v7g0ht3pl2vd8q79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvUqXsLiKxWlB3KfZjfGHCTJwxMnwJOmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328481382959-uirc597os56d3cj6v7g0ht3pl2vd8q79.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "328481382959-j1ohkurd8nc6qo70inughkc1r5r7ujpn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "host.exp.exponent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

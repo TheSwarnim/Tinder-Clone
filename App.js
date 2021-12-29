@@ -1,9 +1,8 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import tw from "twrnc";
-import {AuthProvider} from "./hooks/useAuth";
 import StackNavigator from "./StackNavigator";
+import { LogBox } from "react-native";
+LogBox.ignoreAllLogs(); // Ignore log notifications by message
+import { NavigationContainer } from "@react-navigation/native";
+import { AuthProvider } from "./hooks/useAuth";
 
 export default function App() {
   return (
@@ -14,12 +13,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
