@@ -1,4 +1,10 @@
-import React, { createContext, useContext } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 import * as Google from "expo-google-app-auth";
 import {
   GoogleAuthProvider,
@@ -22,23 +28,62 @@ const config = {
 };
 
 export const AuthProvider = ({ children }) => {
+  const [error, setError] = useState(null);
+  const [user, setUser] = useState(null);
+  const [initialLoading, setInitialLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(
+    () =>
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUser(user);
+        } else {
+          setUser(null);
+        }
+        setInitialLoading(false);
+      }),
+
+    []
+  );
+
   const signInWithGoogle = async () => {
-    await Google.logInAsync(config).then(async (logInResult) => {
-      if (logInResult.type === "success") {
-        // login...
-        const { idToken, accessToken } = logInResult;
-        const credential = GoogleAuthProvider.credential(idToken, accessToken);
+    setLoading(true);
 
-        await signInWithCredential(auth, credential);
-      }
+    await Google.logInAsync(config)
+      .then(async (logInResult) => {
+        if (logInResult.type === "success") {
+          // login...
+          const { idToken, accessToken } = logInResult;
+          const credential = GoogleAuthProvider.credential(
+            idToken,
+            accessToken
+          );
 
-      return Promise.reject();
-    });
+          await signInWithCredential(auth, credential);
+        }
+
+        return Promise.reject();
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
   };
 
+  const logout = () => {
+    setLoading(true);
+    signOut(auth)
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
+  };
+
+  const memoedValue = useMemo(
+    () => ({ user, loading, error, signInWithGoogle, logout }),
+    [user, loading, error]
+  );
+
   return (
-    <AuthContext.Provider value={{ user: null, signInWithGoogle }}>
-      {children}
+    <AuthContext.Provider value={memoedValue}>
+      {!initialLoading && children}
     </AuthContext.Provider>
   );
 };
