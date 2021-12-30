@@ -13,7 +13,11 @@ const StackNavigator = () => {
   let { user } = useAuth();
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       {user ? (
         <>
           <Stack.Screen name={screenNames.homeScreen} component={HomeScreen} />
