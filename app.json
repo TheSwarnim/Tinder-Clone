@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "tinder-clone",
+    "name": "Tinder Clone",
     "slug": "tinder-clone",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,6 +28,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

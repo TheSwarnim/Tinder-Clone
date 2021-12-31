@@ -4,4 +4,5 @@ export const screenNames = {
   loginScreen: "LoginScreen",
   modalScreen: "ModalScreen",
   matchScreen: "MatchScreen",
+  messagesScreen: "MessagesScreen",
 };

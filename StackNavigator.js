@@ -6,6 +6,7 @@ import ChatScreen from "./screens/ChatScreen";
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import MatchScreen from "./screens/MatchScreen";
+import MessagesScreen from "./screens/MessagesScreen";
 import ModalScreen from "./screens/ModalScreen";
 import { screenNames } from "./utils/screenNames";
 
@@ -31,6 +32,11 @@ const StackNavigator = () => {
             <Stack.Screen
               name={screenNames.chatScreen}
               component={ChatScreen}
+            />
+
+            <Stack.Screen
+              name={screenNames.messagesScreen}
+              component={MessagesScreen}
             />
           </Stack.Group>
 

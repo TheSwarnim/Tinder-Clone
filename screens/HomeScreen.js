@@ -204,7 +204,7 @@ const HomeScreen = () => {
                   style={[
                     tw`absolute bottom-0 bg-white w-full h-20 flex-row
                  justify-between items-center px-6  py-2 rounded-b-xl`,
-                    styles.cardShadow,
+                    defaultStyle.cardShadow,
                   ]}
                 >
                   <View>
@@ -220,7 +220,7 @@ const HomeScreen = () => {
               <View
                 style={[
                   tw`relative bg-white h-3/4 rounded-xl justify-center items-center`,
-                  styles.cardShadow,
+                  defaultStyle.cardShadow,
                 ]}
               >
                 <Text style={tw`font-bold pb-5`}>No more profiles</Text>
@@ -255,16 +255,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  cardShadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-    elevation: 2,
-  },
-});
